@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title></title>
+	<script src="mithril.js"></script>
+	<script src="mithril.sugartags.js"></script>
+</head>
+<body>
+
+<div id="content"></div>
+
+<script>
+	//namespace
+	var app = {
+		controller: function() {},
+		//	With sugar tags:
+		view: function(ctrl) {
+			with(m.sugarTags) { return [
+				ul({class: "listy"}, [
+				    li(a({href: '#'}, "item 1")),
+				    li(a({href: '#'}, "item 2")),
+				    li(a({href: '#'}, "item 3"))
+				])
+			]};
+		},
+		//	Without sugar tags:
+		viewOldSkool: function(ctrl) {
+			return [
+				m("ul", {class: "listy"}, [
+				    m("li", m("a", {href: '#'}, "item 1")),
+				    m("li", m("a", {href: '#'}, "item 2")),
+				    m("li", m("a", {href: '#'}, "item 3"))
+				])
+			];
+		}
+	};
+
+	//initialize
+	m.module(document.getElementById("content"), app);
+</script>
+</body>
+</html>
