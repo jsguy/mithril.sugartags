@@ -26,3 +26,5 @@ Without sugar tags
             ])
         ];
     }
+
+It works the same as normal mithril tags, and can be compiled just the same.
