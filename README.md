@@ -7,10 +7,10 @@ With sugar tags
 
     view: function(ctrl) {
         with(m.sugarTags) { return [
-            ul({class: "listy"}, [
-                li(a({href: '#'}, "item 1")),
-                li(a({href: '#'}, "item 2")),
-                li(a({href: '#'}, "item 3"))
+            UL({class: "listy"}, [
+                LI(A({href: '#'}, "item 1")),
+                LI(A({href: '#'}, "item 2")),
+                LI(A({href: '#'}, "item 3"))
             ])
         ]};
     },
