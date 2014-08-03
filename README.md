@@ -28,3 +28,7 @@ Without sugar tags
     }
 
 It works the same as normal mithril tags, and can be compiled just the same.
+
+You can also use lowercase tags by doing:
+
+    with(m.sugarTags.lower()) {

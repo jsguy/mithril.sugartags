@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title></title>
+	<script src="../mithril.js"></script>
+	<script src="../mithril.sugartags.js"></script>
+	<script src="lib/qunit.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/qunit.css">
+</head>
+<body>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<div id="content"></div>
+
+<script>
+
+	var sugar, normal, lower,
+		ctrl = {
+			links: [
+				{ href: "#", title: "Link 1" },
+				{ href: "#", title: "Link 2" },
+				{ href: "#", title: "Link 3" }
+			]
+		};
+
+	with(m.sugarTags) { sugar = [
+		UL( {class: "listy"}, [
+			ctrl.links.map(function(link) {
+				return LI(
+					A({href: link.href}, link.title)
+				);
+			})
+		])
+	]};
+
+	with(m.sugarTags.lower()) { lower = [
+		ul( {class: "listy"}, [
+			ctrl.links.map(function(link) {
+				return li(
+					a({href: link.href}, link.title)
+				);
+			})
+		])
+	]};
+
+	//	Without sugar tags:
+	normal = [
+		m("ul", {class: "listy"}, [
+			ctrl.links.map(function(link) {
+				return m("li", 
+					m("a", {href: link.href}, link.title)
+				)
+			})
+		])
+	];
+
+	QUnit.test( "Sugar tags render same as normal tags", function( assert ) {
+		expect( 3 );	
+
+		deepEqual(sugar, normal, "Sugar and normal render the same");
+		deepEqual(sugar, lower, "Sugar and lower render the same");
+		deepEqual(lower, normal, "Lower and normal render the same");
+	});
+</script>
+</body>
+</html>

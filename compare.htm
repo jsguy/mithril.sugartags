@@ -34,9 +34,11 @@
 		viewOldSkool: function(ctrl) {
 			return [
 				m("ul", {class: "listy"}, [
-					m("li", 
-						m("a", {href: '#'}, "Link")
-					)
+					ctrl.links.map(function(link) {
+						return m("li", 
+							m("a", {href: link.href}, link.title)
+						);
+					})
 				])
 			];
 		}
