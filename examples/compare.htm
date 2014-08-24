@@ -20,7 +20,7 @@
 		},
 		//	With sugar tags:
 		view: function(ctrl) {
-			with(m.sugarTags) { return [
+			return [
 				UL( {class: "listy"}, [
 					ctrl.links.map(function(link) {
 						return LI(
@@ -28,7 +28,7 @@
 						);
 					})
 				])
-			]};
+			];
 		},
 		//	Without sugar tags:
 		viewOldSkool: function(ctrl) {

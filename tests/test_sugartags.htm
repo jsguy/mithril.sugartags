@@ -24,7 +24,7 @@
 			]
 		};
 
-	with(m.sugarTags) { sugar = [
+	sugar = [
 		UL( {class: "listy"}, [
 			ctrl.links.map(function(link) {
 				return LI(
@@ -32,7 +32,7 @@
 				);
 			})
 		])
-	]};
+	];
 
 	with(m.sugarTags.lower()) { lower = [
 		ul( {class: "listy"}, [
