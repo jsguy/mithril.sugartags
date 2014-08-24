@@ -20,7 +20,7 @@
 		(function(tag){
 			var lowerTag = tag.toLowerCase();
 			context.m.sugarTags[tag] = function(){
-				return m.apply(this, arg([lowerTag], arguments));
+				return (context.m.e? context.m.e: context.m).apply(this, arg([lowerTag], arguments));
 			};
 		}(tagList[i]));
 	}}
@@ -34,7 +34,7 @@
 				(function(tag){
 					var lowerTag = tag.toLowerCase();
 					lowerTagCache[lowerTag] = function(){
-						return m.apply(this, arg([lowerTag], arguments));
+						return (context.m.e? context.m.e: m).apply(this, arg([lowerTag], arguments));
 					};
 				}(tagList[i]));
 			}}
