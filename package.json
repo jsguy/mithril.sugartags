@@ -1,11 +1,5 @@
 {
 	"name": "mithril.sugartags",
 	"version": "0.0.1",
-	"author": "JavaScript guy <mikkel@jsguy.com>",
-	"description": "Mithril sugartags - Sugard tags for mithril templating system - less code, less clutter, more awesome.",
-	"contributors": [{
-		"name": "Mikkel Bergmann",
-		"email": "mikkel@jsguy.com"
-	}],
-	"license": "MIT"
+	"description": "Mithril sugartags - Sugard tags for mithril templating system - less code, less clutter, more awesome."
 }
