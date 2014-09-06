@@ -1,0 +1,26 @@
+{
+	"name": "mithril.sugartags",
+	"version": "0.0.1",
+	"author": "JavaScript guy <mikkel@jsguy.com>",
+	"description": "Mithril sugartags - Sugar'd tags for mithril templating system - less code, less clutter, more awesome.",
+	"contributors": [{
+		"name": "Mikkel Bergmann",
+		"email": "mikkel@jsguy.com"
+	}],
+	"bin": {
+		"mithril.sugartags": "mithril.sugartags.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jsguy/mithril.sugartags.git"
+	},
+	"keywords": [
+		"Mithril",
+		"view",
+		"template",
+		"sugar",
+		"useful",
+		"jsguy"
+	],
+	"license": "MIT"
+}
