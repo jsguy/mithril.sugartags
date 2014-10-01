@@ -31,14 +31,14 @@ It works the same as normal mithril tags, and can be compiled just the same.
 
 You can also use lowercase tags by doing:
 
-    with(m.sugarTags.lower()) {
+    with(m.sugarTags.lower()) { ...
 
 Note: if you prefer to not pollute the global namespace with the methods to create tags, you can do:
 
-    m.localSugarTags
+    m.localSugarTags = true;
 
 And then in the template:
 
-    with(m.sugarTags) { 
+    with(m.sugarTags) { ...
 
-This might have some performance implications in some circumstances.
+This might have some performance implications in some circumstances, using global uppercase sugartags is recommended.
