@@ -1,0 +1,19 @@
+{
+  "name": "mithril.sugartags",
+  "main": "mithril.sugartags.min.js",
+  "version": "0.1.0",
+  "description": "Sugar'd tags for mithril templating system - less code, less clutter, more awesome.",
+  "keywords": [
+    "template",
+    "sugar",
+    "tags",
+    "elements",
+    "mithril",
+    "awesome"
+  ],
+  "authors": [
+    "Mikkel Bergmann (jsguy)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jsguy/mithril.sugartags"
+}
