@@ -1,16 +1,16 @@
 # mithril.sugartags
 
+Sugar'd tags for mithril templating system - less code, less clutter, more awesome.
+
 ## Installing
 
 Either simply include mithril.sugartags.min.js in your project, or isntall via bower:
 
     bower install mithril.sugartags --save
 
-## What is it?
+## What does it do?
 
-Sugar'd tags for mithril templating system - less code, less clutter, more awesome.
-
-With sugar tags
+With sugar tags, your code can be nice like this:
 
     view: function(ctrl) {
         return [
@@ -22,7 +22,7 @@ With sugar tags
         ];
     },
 
-Without sugar tags
+Without sugar tags it is a little verbose:
 
     view: function(ctrl) {
         return [
@@ -48,4 +48,4 @@ And then in the template:
 
     with(m.sugarTags) { ...
 
-This might have some performance implications in some circumstances, using global uppercase sugartags is recommended.
+*Note:* Using `with` might have some performance implications in some circumstances, using global uppercase sugartags is the recommended way.
