@@ -1,5 +1,4 @@
 # mithril.sugartags
-=================
 
 ## Installing
 
