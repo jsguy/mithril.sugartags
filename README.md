@@ -1,5 +1,13 @@
-mithril.sugartags
+# mithril.sugartags
 =================
+
+## Installing
+
+Either simply include mithril.sugartags.min.js in your project, or isntall via bower:
+
+    bower install mithril.sugartags --save
+
+## What is it?
 
 Sugar'd tags for mithril templating system - less code, less clutter, more awesome.
 
