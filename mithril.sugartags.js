@@ -4,6 +4,7 @@
 (function(){
 var mithrilSugartags = function(m, scope){
 	m.sugarTags = m.sugarTags || {};
+	scope = scope || m;
 
 	var arg = function(l1, l2){
 			var i;
