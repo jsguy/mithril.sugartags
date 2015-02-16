@@ -13,22 +13,32 @@ var mithrilSugartags = function(m, scope){
 			return l1;
 		}, 
 		getClassList = function(args){
-			for(var i in args) {
+			var i, result;
+			for(i in args) {
 				if(args[i] && args[i].class) {
-					return args[i].class.split(" ");
+					return typeof (args[i].class == "string")? 
+						args[i].class.split(" "):
+						false;
 				}
 			}
 		},
 		makeSugarTag = function(tag) {
 			var c, el;
 			return function() {
-				//	if class, allow use of cache
-				if(c = getClassList(arguments)) {
+				var args = Array.prototype.slice.call(arguments);
+				//	if class is string, allow use of cache
+				if(c = getClassList(args)) {
 					el = [tag + "." + c.join(".")];
+					//	Remove class tag, so we don't duplicate
+					for(var i in args) {
+						if(args[i] && args[i].class) {
+							delete args[i].class;
+						}
+					}
 				} else {
 					el = [tag];
 				}
-				return (m.e? m.e: m).apply(this, arg(el, arguments));
+				return (m.e? m.e: m).apply(this, arg(el, args));
 			};
 		},
 		tagList = ["A","ABBR","ACRONYM","ADDRESS","AREA","ARTICLE","ASIDE","AUDIO","B","BDI","BDO","BIG","BLOCKQUOTE","BODY","BR","BUTTON","CANVAS","CAPTION","CITE","CODE","COL","COLGROUP","COMMAND","DATALIST","DD","DEL","DETAILS","DFN","DIV","DL","DT","EM","EMBED","FIELDSET","FIGCAPTION","FIGURE","FOOTER","FORM","FRAME","FRAMESET","H1","H2","H3","H4","H5","H6","HEAD","HEADER","HGROUP","HR","HTML","I","IFRAME","IMG","INPUT","INS","KBD","KEYGEN","LABEL","LEGEND","LI","LINK","MAP","MARK","META","METER","NAV","NOSCRIPT","OBJECT","OL","OPTGROUP","OPTION","OUTPUT","P","PARAM","PRE","PROGRESS","Q","RP","RT","RUBY","SAMP","SCRIPT","SECTION","SELECT","SMALL","SOURCE","SPAN","SPLIT","STRONG","STYLE","SUB","SUMMARY","SUP","TABLE","TBODY","TD","TEXTAREA","TFOOT","TH","THEAD","TIME","TITLE","TR","TRACK","TT","UL","VAR","VIDEO","WBR"],
