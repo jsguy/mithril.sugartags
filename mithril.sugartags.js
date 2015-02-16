@@ -14,7 +14,7 @@ var mithrilSugartags = function(m, scope){
 		}, 
 		getClassList = function(args){
 			for(var i in args) {
-				if(args[i].class) {
+				if(args[i] && args[i].class) {
 					return args[i].class.split(" ");
 				}
 			}
