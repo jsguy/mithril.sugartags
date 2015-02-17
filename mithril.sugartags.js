@@ -16,9 +16,9 @@ var mithrilSugartags = function(m, scope){
 		getClassList = function(args){
 			var i, result;
 			for(i in args) {
-				if(args[i] && args[i].class) {
-					return typeof (args[i].class == "string")? 
-						args[i].class.split(" "):
+				if(args[i] && args[i]['class']) {
+					return typeof (args[i]['class'] == "string")? 
+						args[i]['class'].split(" "):
 						false;
 				}
 			}
@@ -32,8 +32,8 @@ var mithrilSugartags = function(m, scope){
 					el = [tag + "." + c.join(".")];
 					//	Remove class tag, so we don't duplicate
 					for(var i in args) {
-						if(args[i] && args[i].class) {
-							delete args[i].class;
+						if(args[i] && args[i]['class']) {
+							delete args[i]['class'];
 						}
 					}
 				} else {
