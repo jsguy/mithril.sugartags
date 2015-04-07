@@ -2,9 +2,15 @@
 //	Copyright (C) 2015 jsguy (Mikkel Bergmann)
 //	MIT licensed
 (function(){
+//	initialise sugar tags - set window.localSugarTags to true 
+//	if you want to not have global sugar tags on the client.
 var mithrilSugartags = function(m, scope){
 	m.sugarTags = m.sugarTags || {};
 	scope = scope || m;
+
+	if(scope.localSugarTags) {
+		scope = m.sugarTags;
+	}
 
 	var arg = function(l1, l2){
 			var i;
@@ -48,16 +54,25 @@ var mithrilSugartags = function(m, scope){
 
 	//	Create sugar'd functions in the required scopes
 	for (i in tagList) {if(tagList.hasOwnProperty(i)) {
-		(function(tag){
-			var lowerTag = tag.toLowerCase();
-			scope[tag] = lowerTagCache[lowerTag] = makeSugarTag(lowerTag);
-		}(tagList[i]));
+		var lowerTag = tagList[i].toLowerCase();
+		scope[tagList[i]] = lowerTagCache[lowerTag] = makeSugarTag(lowerTag);
 	}}
 
 	//	Lowercased sugar tags
 	m.sugarTags.lower = function(){
 		return lowerTagCache;
 	};
+
+	//	Ability to add custom elements (eg: from mithril.elements)
+	m.sugarify = function(elements){
+		elements = elements || m.elements || [];
+		for(var key in elements) {if(elements.hasOwnProperty(key)){
+			var lowerTag = key.toLowerCase();
+			scope[key.toUpperCase()] = lowerTagCache[lowerTag] = makeSugarTag(lowerTag);
+		}}
+	};
+
+	m.sugarify();
 
 	return scope;
 };
