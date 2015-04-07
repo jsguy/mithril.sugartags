@@ -1,6 +1,6 @@
 {
 	"name": "mithril.sugartags",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Mithril sugartags - Sugard tags for mithril templating system - less code, less clutter, more awesome.",
 	"repository": {
 		"type": "git",
