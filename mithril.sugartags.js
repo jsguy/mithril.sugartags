@@ -8,7 +8,7 @@ var mithrilSugartags = function(m, scope){
 	m.sugarTags = m.sugarTags || {};
 	scope = scope || m;
 
-	if(scope.localSugarTags) {
+	if(m.localSugarTags || scope.localSugarTags) {
 		scope = m.sugarTags;
 	}
 
