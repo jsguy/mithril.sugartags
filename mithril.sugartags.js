@@ -68,7 +68,7 @@ var mithrilSugartags = function(m, scope){
 		elements = elements || m.elements || [];
 		for(var key in elements) {if(elements.hasOwnProperty(key)){
 			var lowerTag = key.toLowerCase();
-			scope[key.toUpperCase()] = lowerTagCache[lowerTag] = makeSugarTag(lowerTag);
+			scope[key.toUpperCase()] = lowerTagCache[lowerTag] = makeSugarTag(key);
 		}}
 	};
 
