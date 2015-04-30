@@ -8,6 +8,10 @@ Either simply include mithril.sugartags.min.js in your project, or install via b
 
     bower install mithril.sugartags --save
 
+Or install via npm:
+
+    npm install mithril.sugartags --save 
+
 ## What does it do?
 
 With sugar tags, your code can be nice like this:
